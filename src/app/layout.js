@@ -13,10 +13,12 @@ export default function RootLayout({ children }) {
   const router = useRouter();
 
   React.useEffect(() => {
-    const isVerified = localStorage.getItem("verified");
+    if (typeof window !== "undefined") {
+      const isVerified = localStorage.getItem("verified");
 
-    if (isVerified === "true") {
-      router.push("golive");
+      if (isVerified === "true") {
+        router.push("golive");
+      }
     }
   }, []);
 
