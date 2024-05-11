@@ -4,8 +4,6 @@ import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
 import axios from "../../app/request/requests";
 
-const height = window.innerHeight;
-
 const CountdownItem = ({ value, title }) => {
   return (
     <Center flexDirection="column">
@@ -22,12 +20,17 @@ const CountdownItem = ({ value, title }) => {
 const GoLiveScreen = () => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
   const [goliveDate, setGoliveDate] = React.useState(null);
+  const [height, setHeight] = React.useState(null);
   const expirationDate = new Date(goliveDate);
 
   useEffect(() => {
     axios.get("/users/golive-date/").then((response) => {
       setGoliveDate(response?.data?.date);
     });
+
+    if (typeof window !== "undefined") {
+      setHeight(window.innerHeight);
+    }
   }, []);
 
   useEffect(() => {
