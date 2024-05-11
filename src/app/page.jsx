@@ -1,9 +1,14 @@
-"use client"
+"use client";
+
+import { Box, Text } from "@chakra-ui/react";
+
 const Home = () => {
   return (
-    <h1 style={{ textAlign: "center", fontWeight: "bold", color: "red" }}>
-      Site under construction
-    </h1>
+    <Box>
+      <Text fontSize={50} textAlign={"center"} fontWeight={"bold"}>
+        Site under construction
+      </Text>
+    </Box>
   );
 };
 export default Home;
