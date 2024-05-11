@@ -1,3 +1,4 @@
+"use client"
 const Home = () => {
   return (
     <h1 style={{ textAlign: "center", fontWeight: "bold", color: "red" }}>
@@ -5,3 +6,4 @@ const Home = () => {
     </h1>
   );
 };
+export default Home;
