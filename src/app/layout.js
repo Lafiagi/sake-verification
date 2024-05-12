@@ -1,8 +1,7 @@
 // app/layout.tsx
 "use client";
-import Image from "next/image";
 import { Providers } from "./providers";
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import OnboardingContext from "./context/OnboardingContext";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -50,8 +49,8 @@ export default function RootLayout({ children }) {
           <Providers>
             <Box
               margin={"auto"}
-              mt={20}
-              width={"60%"}
+              mt={{ lg: 20, md: 20 }}
+              width={{ lg: "60%" }}
               bgColor={"#fff"}
               minHeight={500}
             >
@@ -59,9 +58,11 @@ export default function RootLayout({ children }) {
 
               <Image
                 src={"/sakamobile.png"}
-                width={150}
-                height={350}
-                style={{ position: "absolute", top: "50%", right: "11%" }}
+                position={"fixed"}
+                top={"40%"}
+                right={{ base: "0%", md: "0%", lg: "10%" }}
+                style={{ width: 150 }}
+                width={{ md: 40 }}
               />
             </Box>
           </Providers>

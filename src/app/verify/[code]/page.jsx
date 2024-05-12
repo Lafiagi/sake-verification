@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import {
   Box,
@@ -11,11 +10,9 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Icon } from "@chakra-ui/icons";
 import { useRouter } from "next/navigation";
 import OnboardingContext from "../../context/OnboardingContext";
 import { NavButton } from "@/components/NavButton";
-import { Modal } from "@chakra-ui/react";
 import axios from "../../request/requests";
 import { useParams } from "next/navigation";
 
@@ -66,9 +63,9 @@ const Verification = () => {
   const handleNext = async (user_type) => {
     setVerificationData(formData);
     if (user_type.toLowerCase() === "vendor") {
-      return history.push("vendor");
+      return history.push("/vendor");
     }
-    return history.push("artisan");
+    return history.push("/artisan");
   };
 
   React.useEffect(() => {
@@ -80,8 +77,6 @@ const Verification = () => {
       } catch (error) {
         if (error.response && error.response.data) {
           const responseData = error.response.data;
-          // Extract the error message from response data
-          console.log(JSON.stringify(responseData));
           setError(responseData?.message);
         } else {
           setError("There was an error. Please all data are filled correctly.");
@@ -92,26 +87,50 @@ const Verification = () => {
     };
     validateVerificationCode(code);
   }, [code]);
+
   if (loading) {
     return null;
   }
+
   return (
-    <Box bg="#fff" pt={30} pb={100} px={30} margin={"auto"} width={"90%"}>
+    <Box
+      bg="#fff"
+      pt={30}
+      pb={100}
+      px={[4, 8, 16, 24]}
+      margin={"auto"}
+      width={"100%"}
+    >
       {verificationError !== null ? (
-        <Text fontSize={30} color={"#ff2222"} textAlign={"center"}>
+        <Text
+          fontSize={["lg", "xl", "2xl"]}
+          color={"#ff2222"}
+          textAlign={"center"}
+        >
           {verificationError}
         </Text>
       ) : (
         <>
           <NavButton step={1} />
           <Box>
-            <Text fontSize={20} color="#000" mt={10} fontWeight={"bold"}>
+            <Text
+              fontSize={["xl", "2xl", "3xl"]}
+              color="#000"
+              mt={{ sm: 0, md: 10 }}
+              fontWeight={"bold"}
+              textAlign={"center"}
+            >
               PERSONAL INFORMATION
             </Text>
-            <Text fontSize={16} color="#555" mb={0}>
+            <Text
+              fontSize={["md", "lg"]}
+              color="#555"
+              mb={0}
+              textAlign={"center"}
+            >
               Please provide your detailed personal information
             </Text>
-            <Box borderRadius={20} w="100%" p={10} pl={0}>
+            <Box borderRadius={20} w="100%" p={[4, 8, 12, 16]} pl={0}>
               <Input
                 variant="outline"
                 placeholder="Title"
@@ -130,7 +149,6 @@ const Verification = () => {
                 }
                 value={formData.first_name}
               />
-
               <Input
                 variant="outline"
                 placeholder="Last Name"
@@ -139,7 +157,6 @@ const Verification = () => {
                 onChange={(e) => handleInputChange("last_name", e.target.value)}
                 value={formData.last_name}
               />
-
               <Input
                 placeholder="Select Date and Time"
                 size="md"
@@ -147,7 +164,6 @@ const Verification = () => {
                 onChange={(e) => handleInputChange("dob", e.target.value)}
                 mb={4}
               />
-
               <Input
                 variant="outline"
                 placeholder="Email Address"
@@ -156,7 +172,6 @@ const Verification = () => {
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 value={formData.email}
               />
-
               <Input
                 variant="outline"
                 placeholder="Phone Number"
@@ -167,7 +182,6 @@ const Verification = () => {
                 }
                 value={formData.phone_number}
               />
-
               <Input
                 variant="outline"
                 placeholder="Recent Residential Address"
@@ -176,11 +190,15 @@ const Verification = () => {
                 onChange={(e) => handleInputChange("address", e.target.value)}
                 value={formData.address}
               />
-
-              <Text fontSize={20} color="#000" mt={5} fontWeight={"bold"}>
+              <Text
+                fontSize={["xl", "2xl", "3xl"]}
+                color="#000"
+                mt={5}
+                fontWeight={"bold"}
+              >
                 BUSINESS INFORMATION
               </Text>
-              <Text fontSize={16} color="#555" mb={0}>
+              <Text fontSize={["md", "lg"]} color="#555" mb={0}>
                 Please provide your detailed Business information
               </Text>
               <FormControl>
@@ -203,7 +221,8 @@ const Verification = () => {
                 bg={isFormValid() ? "#1e81ce" : "#ccc"}
                 mt={2}
                 mb={4}
-                disabled={!isFormValid()}
+                isDisabled={!isFormValid()}
+                width={{sm: "100%"}}
               >
                 Next
               </Button>
@@ -214,26 +233,6 @@ const Verification = () => {
       )}
     </Box>
   );
-};
-
-const styles = {
-  dateInput: {
-    borderColor: "#00afee",
-    bg: "#eee",
-    mt: 10,
-    mb: 10,
-    elevation: 5,
-    textTransform: "capitalize",
-    height: 40,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 5,
-  },
-  editableInput: {
-    bg: "#fff",
-  },
 };
 
 export default Verification;

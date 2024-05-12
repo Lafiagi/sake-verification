@@ -7,6 +7,7 @@ import {
   FormLabel,
   Input,
   Select,
+  Spinner,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -41,11 +42,7 @@ const Verification = () => {
   } = formData;
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
-  const {
-    isOpen: isErrorModalVisible,
-    onOpen: openErrorModal,
-    onClose: closeErrorModal,
-  } = useDisclosure();
+
   const { verificationData } = React.useContext(OnboardingContext);
 
   const isFormValid = () => {
@@ -80,7 +77,7 @@ const Verification = () => {
       if (error.response && error.response.data) {
         const responseData = error.response.data;
         // Extract the error message from response data
-        const errorMessage = parseErrorMessage(responseData);
+        const errorMessage = parseErrorMessage(responseData?.message);
         setError(errorMessage);
       } else {
         setError("There was an error. Please all data are filled correctly.");
@@ -102,7 +99,7 @@ const Verification = () => {
         }
       }
     }
-    return "An error occurred. Please try again."; // Default error message
+    return "There was an error. Please all data are filled correctly."; // Default error message
   };
 
   return (
@@ -196,35 +193,20 @@ const Verification = () => {
             }
           />
         </Box>
-
+        <Text fontSize={20} color={"#f33"}>
+          {error}
+        </Text>
         <Button
           onClick={handleRegister}
-          backgroundColor={isFormValid() ? "#1e81ce" : "#ccc"}
+          backgroundColor={isFormValid() ? "#1e81ce" : "#999"}
           marginBottom={30}
           marginTop={10}
-          disabled={!isFormValid()}
+          isDisabled={!isFormValid()}
           color="#fff"
         >
-          Submit
+          {loading ? <Spinner size="sm" color="white" /> : "Submit"}
         </Button>
       </Box>
-
-      <Modal isOpen={isErrorModalVisible} onClose={closeErrorModal}>
-        <Box bg="#fff" p={20}>
-          <Text fontSize={16} textAlign="center" textTransform="capitalize">
-            {error ||
-              "There was an error. Please ensure your email and phone number are not registered yet."}
-          </Text>
-          <Button
-            onClick={closeErrorModal}
-            marginTop={20}
-            backgroundColor="#1e81ce"
-            color="#fff"
-          >
-            Close
-          </Button>
-        </Box>
-      </Modal>
     </Box>
   );
 };
