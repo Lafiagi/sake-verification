@@ -9,6 +9,7 @@ import {
   Text,
   useDisclosure,
   Select,
+  Spinner,
 } from "@chakra-ui/react";
 import { Modal } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
@@ -78,10 +79,7 @@ const Verification = () => {
         ...formData,
         ...verificationData,
       });
-      await AsyncStorage.setItem(
-        "on_boarding_data",
-        JSON.stringify(response?.data)
-      );
+      localStorage.setItem("on_boarding_data", JSON.stringify(response?.data));
       localStorage.setItem("verified", "true");
       router.push("thankyou");
     } catch (error) {
@@ -111,7 +109,7 @@ const Verification = () => {
         }
       }
     }
-    return "An error occurred. Please try again."; // Default error message
+    return "There was an error. Please all data are filled correctly."; // Default error message
   };
 
   return (
@@ -219,13 +217,13 @@ const Verification = () => {
 
         <Button
           onClick={handleRegister}
-          backgroundColor={isFormValid() ? "#1e81ce" : "#ccc"}
+          backgroundColor={isFormValid() ? "#1e81ce" : "#999"}
           marginBottom={30}
           marginTop={10}
-          disabled={!isFormValid()}
+          isDisabled={!isFormValid()}
           color="#fff"
         >
-          Submit
+          {loading ? <Spinner size="sm" color="white" /> : "Submit"}
         </Button>
       </Box>
 
