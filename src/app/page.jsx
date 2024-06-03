@@ -16,7 +16,7 @@ function App() {
           work, a vendor seeking new customers, or a subscriber searching for exceptional service providers, Sakaslist
           is your go-to solution.
         </p>
-        <a href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile" className="cta-button">Download the App on Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"  className="cta-button">Download the App on Google Play</a>
         <section className="features">
           <div className="feature">
             {/* <img src={artisanImg} alt="Artisans" /> */}
