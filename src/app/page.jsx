@@ -1,48 +1,63 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css"; // Optional: Create this CSS file for custom styles
+import { Box, Text } from "@chakra-ui/react";
 
-function App() {
+const Sakaslist = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Sakaslist</h1>
-        <p>Connecting Verified Artisans, Vendors, and Subscribers</p>
-      </header>
-      <main className="App-main">
-        <h2>Welcome to Sakaslist</h2>
-        <p>
-          Sakaslist is the premier platform for connecting skilled artisans and trusted vendors with discerning subscribers
-          who seek high-quality craftsmanship and reliable services. Whether you're an artisan looking to showcase your
-          work, a vendor seeking new customers, or a subscriber searching for exceptional service providers, Sakaslist
-          is your go-to solution.
-        </p>
-        <a href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"  className="cta-button">Download the App on Google Play</a>
-        <section className="features">
-          <div className="feature">
-            {/* <img src={artisanImg} alt="Artisans" /> */}
-            <h3>Verified Artisans</h3>
-            <p>Our platform features a curated list of verified artisans who excel in their respective crafts. From
-              skilled carpenters to talented painters, find the right expert for your project on Sakaslist.</p>
-          </div>
-          <div className="feature">
-            {/* <img src={vendorImg} alt="Vendors" /> */}
-            <h3>Trusted Vendors</h3>
-            <p>Discover vendors who offer high-quality products and services. Our verification process ensures that you
-              only connect with reliable and reputable vendors on Sakaslist.</p>
-          </div>
-          <div className="feature">
-            {/* <img src={subscriberImg} alt="Subscribers" /> */}
-            <h3>Happy Subscribers</h3>
-            <p>Join a community of satisfied subscribers who trust Sakaslist for their artisan and vendor needs. Enjoy
-              seamless connections and exceptional service every time.</p>
-          </div>
-        </section>
-      </main>
-      <footer className="App-footer">
-        <p>&copy; 2024 Sakaslist. All rights reserved.</p>
-      </footer>
-    </div>
-  );
-}
+    <Box
+      bgColor={"blue"}
+      minHeight={900}
+      display={"flex"}
+      flexDirection={"column"}
+      bgGradient="linear(to-b, #4a90e2, #9013fe)" // Example gradient
 
-export default App;
+    >
+      <div className="sakaslist-container">
+          <Text fontSize={25} color={"#fff"} textAlign={"center"}>
+            Nigeria's Largest Network of Artisans & Vendors!!!
+          </Text>
+          <Text
+            fontSize={50}
+            mt={100}
+            textAlign={"center"}
+            fontWeight={"bold"}
+            textShadow={100}
+            color={"#fff"}
+          >
+            JOIN US TODAY AS A BUYER OR SELLER
+          </Text>
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          marginTop={50}
+          backgroundImage={"url('/sakalady.jpeg')"} // Ensure the image path is correct
+          backgroundPosition={"center"}
+          backgroundRepeat={"no-repeat"}
+          backgroundSize={"cover"}
+          zIndex={-1} // Place the background image behind the text
+          height={400}
+        >
+          <a
+            href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{marginTop: 250}}
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Get it on Google Play"
+              className="google-play-badge"
+            />
+          </a>
+          <Text fontWeight={"bold"} fontSize={20} textAlign={"center"}>
+            Coming soon to Apple (iOS) Devices.
+          </Text>
+        </Box>
+      </div>
+    </Box>
+  );
+};
+
+export default Sakaslist;
