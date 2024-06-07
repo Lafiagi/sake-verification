@@ -25,19 +25,31 @@ const Sakaslist = () => {
         width="100vw"
         position="relative"
         color="white"
-        textAlign="center"
+        // textAlign="center"
         overflow="hidden"
+        padding={70}
+        paddingTop={0}
       >
         <Box width="100%">
-          <Image src="/logo.png" alt="Sakaslist Logo" mb={4} mx="auto" />
-          <Heading fontSize="2xl" fontWeight="bold">
+          <Image
+            src="/logo.png"
+            alt="Sakaslist Logo"
+            mx="auto"
+            width={150}
+            height={150}
+          />
+        </Box>
+        <Box width={"40%"}>
+          <Heading fontSize="3xl" fontWeight="bold">
             Nigeria's Largest Network of Artisans & Vendors!!!
           </Heading>
-          <Heading fontSize="4xl" fontWeight="bold">
-            JOIN US TODAY AS A BUYER OR SELLER
+          <Heading marginTop={30}>
+            <Text fontSize={"4xl"} color={"#000"}>
+              JOIN US TODAY AS A BUYER OR SELLER
+            </Text>
           </Heading>
         </Box>
-        <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" textAlign="center">
+        <Box marginTop={10}>
           <Link
             href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"
             isExternal
@@ -46,7 +58,7 @@ const Sakaslist = () => {
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
               alt="Get it on Google Play"
               width="200px"
-              mx="auto"
+              
               mb={4}
             />
           </Link>
@@ -54,12 +66,18 @@ const Sakaslist = () => {
             Coming soon to Apple (iOS) Devices.
           </Text>
         </Box>
-        <Box position="absolute" bottom="0" width="100%" textAlign="center">
+        <Box
+          position="absolute"
+          bottom="20%"
+          width="100%"
+          textAlign="center"
+          left={"100"}
+        >
           <Image
             src="/lady.png" // Ensure this path is correct for the person's image
             alt="Person Image"
-            objectFit="contain"
-            width="30%"
+            objectFit="cover"
+            width="35%"
             mx="auto"
           />
         </Box>
