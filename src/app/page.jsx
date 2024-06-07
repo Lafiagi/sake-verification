@@ -3,7 +3,7 @@ import { Box, Image, Link, Text, Heading } from "@chakra-ui/react";
 
 const Sakaslist = () => {
   return (
-    <Box position="relative" height="100vh" width="100vw" overflow="hidden">
+    <Box position="relative" height="100vh" width="100vw" overflow="hidden" bgColor={"#5e88cc"}>
       {/* Mobile Image */}
       <Image
         src="/image.png" // Ensure this path is correct for the mobile image
@@ -12,7 +12,7 @@ const Sakaslist = () => {
         width="100%"
         height="100%"
         position="absolute"
-        top="0"
+        top="5"
         left="0"
         display={{ base: "block", md: "none" }}
       />
@@ -58,7 +58,6 @@ const Sakaslist = () => {
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
               alt="Get it on Google Play"
               width="200px"
-              
               mb={4}
             />
           </Link>
