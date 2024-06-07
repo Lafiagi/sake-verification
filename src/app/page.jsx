@@ -22,20 +22,22 @@ const Sakaslist = () => {
         display={{ base: "none", md: "block" }}
         background="linear-gradient(to bottom, #4facfe, #00f2fe)"
         height="100vh"
+        width="100vw"
         position="relative"
         color="white"
         textAlign="center"
+        overflow="hidden"
       >
-        <Box position="absolute" top="10%" width="100%">
-          <Image src="path/to/logo.png" alt="Sakaslist Logo" mb={4} mx="auto" />
-          <Heading fontSize="2xl" fontWeight="bold" mb={4}>
+        <Box width="100%">
+          <Image src="/logo.png" alt="Sakaslist Logo" mb={4} mx="auto" />
+          <Heading fontSize="2xl" fontWeight="bold">
             Nigeria's Largest Network of Artisans & Vendors!!!
           </Heading>
-          <Heading fontSize="4xl" fontWeight="bold" mb={6}>
+          <Heading fontSize="4xl" fontWeight="bold">
             JOIN US TODAY AS A BUYER OR SELLER
           </Heading>
         </Box>
-        <Box position="absolute" top="40%" width="100%">
+        <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" textAlign="center">
           <Link
             href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"
             isExternal
@@ -52,12 +54,12 @@ const Sakaslist = () => {
             Coming soon to Apple (iOS) Devices.
           </Text>
         </Box>
-        <Box position="absolute" bottom="0" width="100%">
+        <Box position="absolute" bottom="0" width="100%" textAlign="center">
           <Image
-            src="path/to/person-image.png" // Ensure this path is correct for the person's image
+            src="/lady.png" // Ensure this path is correct for the person's image
             alt="Person Image"
             objectFit="contain"
-            width="40%"
+            width="30%"
             mx="auto"
           />
         </Box>

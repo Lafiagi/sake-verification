@@ -35,8 +35,8 @@ export default function RootLayout({ children }) {
           <Providers>
             <Box
               margin={"auto"}
-              mt={{ lg: 20, md: 20 }}
-              width={{ lg: "60%" }}
+              // mt={{ lg: 20, md: 20 }}
+              // width={{ lg: "60%" }}
               bgColor={"#fff"}
               minHeight={500}
             >
