@@ -20,7 +20,7 @@ const Sakaslist = () => {
       {/* Desktop Code */}
       <Box
         display={{ base: "none", md: "block" }}
-        background="linear-gradient(to bottom, #4facfe, #00f2fe)"
+        background="linear-gradient(to bottom, #4facfe, #fff2fe)"
         height="100vh"
         width="100vw"
         position="relative"
