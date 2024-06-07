@@ -15,6 +15,7 @@ import { Modal } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import OnboardingContext from "../context/OnboardingContext";
 import axios from "../../app/request/requests";
+import SakaLogo from "@/components/Sakalogo";
 
 const Verification = () => {
   const router = useRouter();
@@ -105,6 +106,7 @@ const Verification = () => {
   return (
     <Box bg="#fff" pt={30} pb={100} px={50}>
       <Box borderRadius={20} minHeight="65%" width="100%">
+      <SakaLogo />
         <FormControl>
           <FormLabel mt={4}>
             Are you registered with Corporate Affairs Commission (CAC)?

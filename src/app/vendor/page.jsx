@@ -10,11 +10,13 @@ import {
   useDisclosure,
   Select,
   Spinner,
+  Image,
 } from "@chakra-ui/react";
 import { Modal } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import OnboardingContext from "../context/OnboardingContext";
 import axios from "../../app/request/requests";
+import SakaLogo from "@/components/Sakalogo";
 
 const Verification = () => {
   const router = useRouter();
@@ -113,8 +115,9 @@ const Verification = () => {
   };
 
   return (
-    <Box bg="#fff" pt={30} pb={100} px={9}>
+    <Box bg="#fff" pt={0} pb={0} px={0}>
       <Box borderRadius={20} minHeight="65%" width="100%" p={10}>
+        <SakaLogo />
         <FormControl marginBottom="10px">
           <FormLabel>
             Are you registered with Corporate Affairs Commission (CAC)?

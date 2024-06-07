@@ -32,20 +32,6 @@ export default function RootLayout({ children }) {
             setGoliveDate: setGoliveDate,
           }}
         >
-          <Box
-            width={"10%"}
-            height={60}
-            margin={"auto"}
-            alignItems={"center"}
-            justifyContent={"center"}
-          >
-            <Image
-              src={"/logo.png"}
-              width={100}
-              height={60}
-              style={{ alignSelf: "center" }}
-            />
-          </Box>
           <Providers>
             <Box
               margin={"auto"}
@@ -56,14 +42,14 @@ export default function RootLayout({ children }) {
             >
               {children}
 
-              <Image
+              {/* <Image
                 src={"/sakamobile.png"}
                 position={"fixed"}
                 top={"40%"}
                 right={{ base: "0%", md: "0%", lg: "10%" }}
                 style={{ width: 150 }}
                 width={{ md: 40 }}
-              />
+              /> */}
             </Box>
           </Providers>
         </OnboardingContext.Provider>
