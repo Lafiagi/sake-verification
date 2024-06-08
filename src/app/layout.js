@@ -11,15 +11,15 @@ export default function RootLayout({ children }) {
   const [goliveDate, setGoliveDate] = React.useState(null);
   const router = useRouter();
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      const isVerified = localStorage.getItem("verified");
+  // React.useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const isVerified = localStorage.getItem("verified");
 
-      if (isVerified === "true") {
-        router.push("golive");
-      }
-    }
-  }, []);
+  //     if (isVerified === "true") {
+  //       router.push("golive");
+  //     }
+  //   }
+  // }, []);
 
   return (
     <html lang="en">
