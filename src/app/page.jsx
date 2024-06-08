@@ -25,9 +25,8 @@ const Sakaslist = () => {
         width="100vw"
         position="relative"
         color="white"
-        // textAlign="center"
         overflow="hidden"
-        padding={70}
+        padding={100}
         paddingTop={0}
       >
         <Box width="100%">
@@ -53,6 +52,7 @@ const Sakaslist = () => {
           <Link
             href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"
             isExternal
+            style={{ display: 'inline-block' }} // Ensure the link is inline-block
           >
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
@@ -67,7 +67,7 @@ const Sakaslist = () => {
         </Box>
         <Box
           position="absolute"
-          bottom="20%"
+          bottom="0%"
           width="100%"
           textAlign="center"
           left={"100"}
@@ -76,8 +76,8 @@ const Sakaslist = () => {
             src="/lady.png" // Ensure this path is correct for the person's image
             alt="Person Image"
             objectFit="cover"
-            width="35%"
-            mx="auto"
+            width="50%"
+            mx="35%"
           />
         </Box>
       </Box>
