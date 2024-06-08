@@ -3,15 +3,15 @@ import { Box, Image, Link, Text, Heading } from "@chakra-ui/react";
 
 const Sakaslist = () => {
   return (
-    <Box position="relative" height="100vh" width="100vw" overflow="hidden" bgColor={"#5e88cc"}>
+    <Box position="relative" height="100vh" width="100vw" overflow="hidden" bgColor={"#2081ce"}>
       {/* Mobile Image */}
       <Image
         src="/image.png" // Ensure this path is correct for the mobile image
         alt="Sakaslist promotion mobile"
-        objectFit="cover"
-        width="100%"
-        height="100%"
-        position="absolute"
+        objectFit="contain"
+        // width="100vw"
+        // height="100vh"
+        // position="absolute"
         top="5"
         left="0"
         display={{ base: "block", md: "none" }}
@@ -48,7 +48,7 @@ const Sakaslist = () => {
             </Text>
           </Heading>
         </Box>
-        <Box marginTop={10} zIndex={0}>
+        <Box marginTop={10}>
           <Link
             href="https://play.google.com/store/apps/details?id=com.lafiagi.sakaslistmobile"
             isExternal
@@ -68,7 +68,6 @@ const Sakaslist = () => {
         <Box
           position="absolute"
           width="100%"
-          textAlign="center"
           left={"100"}
           bottom={0}
         >
